@@ -1,0 +1,14 @@
+[Unit]
+Description=My App
+After=network.target
+
+[Service]
+Type=simple
+User=deploy
+WorkingDirectory=/opt/myapp
+ExecStart=/opt/myapp/run.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
