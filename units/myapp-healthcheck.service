@@ -1,0 +1,10 @@
+[Unit]
+Description=Health check for myapp
+After=myapp.service
+
+[Service]
+Type=oneshot
+User=deploy
+# Скрипт из репозитория linux-bash-scripting-labs (scripts/healthcheck.sh).
+# Порт 8080 — пример; укажите порт вашего приложения.
+ExecStart=/opt/scripts/healthcheck.sh localhost:8080 3
